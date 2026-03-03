@@ -1,169 +1,194 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>個人履歷 - 張庭瑄</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人履歷 - [張庭瑄]</title>
+    <style>
+        /* CSS Reset & Basic Styling */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-<style>
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f4f6f9;
-    color: #333;
-}
+        body {
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
 
-.container {
-    max-width: 900px;
-    margin: 40px auto;
-    background: white;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-}
+        .container {
+            width: 80%;
+            max-width: 900px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 40px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
 
-header {
-    text-align: center;
-    margin-bottom: 30px;
-}
+        /* Header / Profile Section */
+        header {
+            text-align: center;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
 
-h1 {
-    margin: 0;
-    font-size: 32px;
-}
+        h1 {
+            color: #0056b3;
+            font-size: 2.5em;
+            margin-bottom: 5px;
+        }
 
-.subtitle {
-    color: #666;
-    margin-top: 5px;
-}
+        .contact-info {
+            color: #666;
+            font-size: 0.9em;
+        }
 
-.section {
-    margin-bottom: 30px;
-}
+        /* Sections */
+        section {
+            margin-bottom: 30px;
+        }
 
-.section h2 {
-    border-left: 6px solid #4a90e2;
-    padding-left: 10px;
-    margin-bottom: 15px;
-}
+        h2 {
+            color: #333;
+            border-left: 4px solid #0056b3;
+            padding-left: 10px;
+            margin-bottom: 15px;
+            background-color: #f9f9f9;
+            padding: 5px 10px;
+        }
 
-.skill-bar {
-    margin-bottom: 10px;
-}
+        /* Lists for Skills & Experience */
+        ul {
+            list-style-type: square;
+            margin-left: 20px;
+        }
 
-.skill-name {
-    margin-bottom: 5px;
-}
+        li {
+            margin-bottom: 8px;
+        }
 
-.bar {
-    background: #ddd;
-    border-radius: 20px;
-    overflow: hidden;
-}
+        /* Specific Elements */
+        .job-title, .degree {
+            font-weight: bold;
+            color: #0056b3;
+        }
 
-.bar-fill {
-    height: 12px;
-    background: #4a90e2;
-    width: 0;
-    transition: width 1.5s ease;
-}
+        .date, .institution {
+            font-style: italic;
+            color: #555;
+            font-size: 0.9em;
+        }
+        
+        /* Interactive Section */
+        #extra-info {
+            display: none; /* Hidden by default */
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+        }
 
-button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 6px;
-    background: #4a90e2;
-    color: white;
-    cursor: pointer;
-    font-size: 14px;
-}
+        button {
+            background-color: #0056b3;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1em;
+            margin-top: 10px;
+        }
 
-button:hover {
-    background: #357abd;
-}
+        button:hover {
+            background-color: #004494;
+        }
 
-.footer {
-    text-align: center;
-    margin-top: 30px;
-    font-size: 14px;
-    color: #777;
-}
-</style>
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .container {
+                width: 95%;
+                padding: 20px;
+            }
+            h1 { font-size: 2em; }
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="container">
+    <div class="container">
+        <header>
+            <h1>[張庭瑄]</h1>
+            <div class="contact-info">
+                Email: your.emailwsyuki1234@gmail.com <br>
+                GitHub: github.com/yourusername | LinkedIn: linkedin.com/in/yourusername
+            </div>
+        </header>
 
-<header>
-    <h1>張庭瑄</h1>
-    <div class="subtitle">
-        亞洲大學學生 | 學號：114055052<br>
-        Email: wsyuki1234@gmail.com
-</div>
-</header>
+        <section>
+            <h2>關於我</h2>
+            <p>你好，我是亞洲大學的學生，學號 114055052。我目前正在尋找實習/工作機會。我對[你的專業領域或興趣]充滿熱情，並渴望在實務中應用我所學的知識。</p>
+        </section>
 
-<div class="section">
-    <h2>個人簡介</h2>
-    <p>
-        我目前就讀亞洲大學，對網頁設計與前端開發充滿興趣。
-        擅長學習新技術，並喜歡將創意轉化為實際作品。
-    </p>
-</div>
+        <section>
+            <h2>學歷</h2>
+            <div>
+                <span class="degree">[室內設計學系] 學士</span><br>
+                <span class="institution">亞洲大學 (Asia University)</span><br>
+                <span class="date">預計畢業年份：[2029]</span>
+            </div>
+        </section>
 
-<div class="section">
-    <h2>教育背景</h2>
-    <p>
-        亞洲大學<br>
-        科系：室內設計學系<br>
-        就讀期間：2025 - 至今
-    </p>
-</div>
+        <section>
+            <h2>專業技能</h2>
+            <ul>
+                <li>程式語言: HTML, CSS, JavaScript (這裡可以填寫你擅長的技能)</li>
+                <li>工具/框架: [例如: React, Node.js, Git 等]</li>
+                <li>語言能力: [例如: 英文 (中等), 中文 (精通)]</li>
+            </ul>
+        </section>
 
-<div class="section">
-    <h2>技能專長</h2>
+        <section>
+            <h2>專案經驗 / 經歷</h2>
+            <div style="margin-bottom: 15px;">
+                <span class="job-title">[專案名稱或職位]</span> | <span class="institution">[組織或課程名稱]</span><br>
+                <span class="date">[開始年月] – [結束年月]</span>
+                <ul>
+                    <li>描述你在此專案中的角色與貢獻。</li>
+                    <li>使用了哪些技術解決了什麼問題。</li>
+                </ul>
+            </div>
+        </section>
 
-    <div class="skill-bar">
-        <div class="skill-name">HTML</div>
-        <div class="bar"><div class="bar-fill" data-width="90%"></div></div>
+        <section>
+            <h2>更多資訊</h2>
+            <button onclick="toggleInfo()">顯示/隱藏詳細資料</button>
+            <div id="extra-info">
+                <p>這裡可以放一些額外的資訊，例如：</p>
+                <ul>
+                    <li>社團活動經驗</li>
+                    <li>志工服務</li>
+                    <li>個人興趣與嗜好</li>
+                </ul>
+            </div>
+        </section>
+
     </div>
 
-    <div class="skill-bar">
-        <div class="skill-name">CSS</div>
-        <div class="bar"><div class="bar-fill" data-width="80%"></div></div>
-    </div>
-
-    <div class="skill-bar">
-        <div class="skill-name">JavaScript</div>
-        <div class="bar"><div class="bar-fill" data-width="75%"></div></div>
-    </div>
-
-    <button onclick="animateSkills()">顯示技能程度</button>
-</div>
-
-<div class="section">
-    <h2>專案經驗</h2>
-    <ul>
-        <li>個人網站設計與製作</li>
-        <li>簡易待辦事項系統開發</li>
-        <li>課堂小組專題開發</li>
-    </ul>
-</div>
-
-<div class="footer">
-    © 2025 張庭瑄 個人履歷
-</div>
-
-</div>
-
-<script>
-function animateSkills() {
-    const bars = document.querySelectorAll('.bar-fill');
-    bars.forEach(bar => {
-        bar.style.width = bar.getAttribute('data-width');
-    });
-}
-</script>
+    <script>
+        function toggleInfo() {
+            var infoDiv = document.getElementById("extra-info");
+            if (infoDiv.style.display === "none" || infoDiv.style.display === "") {
+                infoDiv.style.display = "block";
+            } else {
+                infoDiv.style.display = "none";
+            }
+        }
+    </script>
 
 </body>
 </html>
