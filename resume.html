@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>個人履歷 - 張庭瑄</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f9;
+    color: #333;
+}
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+.subtitle {
+    color: #666;
+    margin-top: 5px;
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+.section h2 {
+    border-left: 6px solid #4a90e2;
+    padding-left: 10px;
+    margin-bottom: 15px;
+}
+
+.skill-bar {
+    margin-bottom: 10px;
+}
+
+.skill-name {
+    margin-bottom: 5px;
+}
+
+.bar {
+    background: #ddd;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 12px;
+    background: #4a90e2;
+    width: 0;
+    transition: width 1.5s ease;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    background: #4a90e2;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    background: #357abd;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #777;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+    <h1>張庭瑄</h1>
+    <div class="subtitle">
+        亞洲大學學生 | 學號：114055052<br>
+        Email: wsyuki1234@gmail.com
+</div>
+</header>
+
+<div class="section">
+    <h2>個人簡介</h2>
+    <p>
+        我目前就讀亞洲大學，對網頁設計與前端開發充滿興趣。
+        擅長學習新技術，並喜歡將創意轉化為實際作品。
+    </p>
+</div>
+
+<div class="section">
+    <h2>教育背景</h2>
+    <p>
+        亞洲大學<br>
+        科系：室內設計學系<br>
+        就讀期間：2025 - 至今
+    </p>
+</div>
+
+<div class="section">
+    <h2>技能專長</h2>
+
+    <div class="skill-bar">
+        <div class="skill-name">HTML</div>
+        <div class="bar"><div class="bar-fill" data-width="90%"></div></div>
+    </div>
+
+    <div class="skill-bar">
+        <div class="skill-name">CSS</div>
+        <div class="bar"><div class="bar-fill" data-width="80%"></div></div>
+    </div>
+
+    <div class="skill-bar">
+        <div class="skill-name">JavaScript</div>
+        <div class="bar"><div class="bar-fill" data-width="75%"></div></div>
+    </div>
+
+    <button onclick="animateSkills()">顯示技能程度</button>
+</div>
+
+<div class="section">
+    <h2>專案經驗</h2>
+    <ul>
+        <li>個人網站設計與製作</li>
+        <li>簡易待辦事項系統開發</li>
+        <li>課堂小組專題開發</li>
+    </ul>
+</div>
+
+<div class="footer">
+    © 2025 張庭瑄 個人履歷
+</div>
+
+</div>
+
+<script>
+function animateSkills() {
+    const bars = document.querySelectorAll('.bar-fill');
+    bars.forEach(bar => {
+        bar.style.width = bar.getAttribute('data-width');
+    });
+}
+</script>
+
+</body>
+</html>
