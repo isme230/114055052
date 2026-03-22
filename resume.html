@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>個人履歷 - 張庭瑄</title>
+
+<style>
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background:#f4f6f9;
+}
+
+.container{
+    max-width:1000px;
+    margin:40px auto;
+    display:flex;
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* 左側 */
+.sidebar{
+    width:30%;
+    background:#2f3b52;
+    color:white;
+    padding:30px;
+}
+
+.profile-pic{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    object-fit:cover;
+    display:block;
+    margin:0 auto 20px;
+    border:4px solid white;
+}
+
+.name{
+    text-align:center;
+    font-size:24px;
+    margin-bottom:5px;
+}
+
+.subtitle{
+    text-align:center;
+    font-size:14px;
+    color:#ccc;
+    margin-bottom:20px;
+}
+
+.info{
+    font-size:14px;
+    margin-bottom:20px;
+}
+
+.info div{
+    margin-bottom:10px;
+}
+
+.skill-bar{
+    margin-bottom:12px;
+}
+
+.bar{
+    background:#555;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.bar-fill{
+    height:10px;
+    background:#4a90e2;
+    width:0;
+}
+
+/* 右側 */
+.main{
+    width:70%;
+    padding:40px;
+}
+
+.section{
+    margin-bottom:30px;
+}
+
+.section h2{
+    border-left:5px solid #4a90e2;
+    padding-left:10px;
+    margin-bottom:15px;
+}
+
+.timeline{
+    border-left:2px solid #ddd;
+    padding-left:15px;
+}
+
+.timeline div{
+    margin-bottom:10px;
+}
+
+ul{
+    padding-left:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- 左側 -->
+    <div class="sidebar">
+<<<<<<< HEAD
+        <img src="imeges/profile.jpg" class="profile-pic">
+=======
+        <img src="images/profile.jpg" class="profile-pic">
+>>>>>>> 4cccd8e4d48c3ab4b25020c32e37187440b307e7
+        <div class="name">張庭瑄</div>
+        <div class="subtitle">室內設計 / 前端設計</div>
+
+        <div class="info">
+            <div>📞 0979810756</div>
+            <div>✉ wsyuki1234@gmail.com</div>
+            <div>📍 台灣</div>
+        </div>
+
+        <div class="section">
+            <h3>技能</h3>
+            <div class="skill-bar">
+                HTML
+                <div class="bar"><div class="bar-fill" data-width="90%"></div></div>
+            </div>
+            <div class="skill-bar">
+                CSS
+                <div class="bar"><div class="bar-fill" data-width="80%"></div></div>
+            </div>
+            <div class="skill-bar">
+                JavaScript
+                <div class="bar"><div class="bar-fill" data-width="75%"></div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 右側 -->
+    <div class="main">
+
+        <div class="section">
+            <h2>個人簡介</h2>
+            <p>
+                就讀亞洲大學室內設計學系，對空間設計與前端開發有高度興趣。
+                擅長將創意轉化為實際作品。
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>教育背景</h2>
+            <div class="timeline">
+                <div>2025 - 至今｜亞洲大學 室內設計學系</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>專案經驗</h2>
+            <ul>
+                <li>個人網站設計與製作</li>
+                <li>待辦事項系統開發</li>
+                <li>課堂專題開發</li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+function animateSkills(){
+const bars=document.querySelectorAll('.bar-fill');
+bars.forEach(bar=>{
+bar.style.width=bar.getAttribute('data-width');
+});
+}
+window.onload=animateSkills;
+</script>
+
+</body>
+</html>
