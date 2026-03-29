@@ -61,6 +61,7 @@ body{
     background:#555;
     border-radius:20px;
     overflow:hidden;
+    margin-bottom:10px;
 }
 
 .bar-fill{
@@ -134,34 +135,24 @@ body{
 
 <body>
 
-<body>
-
-<!-- YouTube 背景音樂 -->
-<iframe width="0" height="0"
-src="https://www.youtube.com/embed/Ha99oWT-oNA?autoplay=1&loop=1&playlist=Ha99oWT-oNA"
-frameborder="0"
-allow="autoplay">
-</iframe>
-
-<div class="container">
-   <!-- 你的履歷內容 -->
-</div>
-
-</body>
+<!-- 🎵 音樂 -->
+<audio id="bgm" autoplay loop>
+    <source src="music/bgm.mp3" type="audio/mpeg">
+</audio>
 
 <script>
-window.addEventListener('load', () => {
-    const bgm = document.getElementById('bgm');
-    bgm.play().catch(() => {
-        document.addEventListener('click', () => {
-            bgm.play();
-        }, { once: true });
-    });
+// 自動播放音樂
+const bgm = document.getElementById('bgm');
+
+// 嘗試直接播放，如果瀏覽器限制則用點擊啟動
+bgm.play().catch(() => {
+    document.addEventListener('click', () => {
+        bgm.play();
+    }, { once: true });
 });
 
-// 音樂開關
+// 音樂開關按鈕
 function toggleMusic(){
-    const bgm = document.getElementById('bgm');
     if(bgm.paused){
         bgm.play();
     }else{
@@ -171,12 +162,12 @@ function toggleMusic(){
 
 // 技能條動畫
 function animateSkills(){
-    const bars=document.querySelectorAll('.bar-fill');
-    bars.forEach(bar=>{
-        bar.style.width=bar.getAttribute('data-width');
+    const bars = document.querySelectorAll('.bar-fill');
+    bars.forEach(bar => {
+        bar.style.width = bar.getAttribute('data-width');
     });
 }
-window.onload=animateSkills;
+window.addEventListener('load', animateSkills);
 </script>
 
 <!-- 🎵 控制按鈕 -->
@@ -225,9 +216,6 @@ window.onload=animateSkills;
             </div>
 
             <img src="images/school.jpg" class="school-img">
-        </div>
-
-        <div class="section">
         </div>
 
     </div>
