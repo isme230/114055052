@@ -1,21 +1,225 @@
-<div class="sidebar">
-    <img src="images/profile.jpg" class="profile-pic">
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>個人履歷 - 張庭瑄</title>
 
-    <div class="name">張庭瑄</div>
-    <div class="subtitle">室內設計</div>
+<style>
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background:#f4f6f9;
+}
 
-    <div class="info">
-        <div>📍 台灣</div>
-        <div>學號：114055052</div>  <!-- 114055052 -->
+/* 主容器 */
+.container{
+    max-width:1000px;
+    margin:40px auto;
+    display:flex;
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* 左側 */
+.sidebar{
+    width:30%;
+    background:#2f3b52;
+    color:white;
+    padding:30px;
+}
+
+.profile-pic{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    object-fit:cover;
+    display:block;
+    margin:0 auto 20px;
+    border:4px solid white;
+}
+
+.name{
+    text-align:center;
+    font-size:24px;
+}
+
+.subtitle{
+    text-align:center;
+    font-size:14px;
+    color:#ccc;
+    margin-bottom:20px;
+}
+
+.info div{
+    margin-bottom:10px;
+}
+
+.bar{
+    background:#555;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:10px;
+}
+
+.bar-fill{
+    height:10px;
+    background:#4a90e2;
+    width:0;
+}
+
+/* 右側 */
+.main{
+    width:70%;
+    padding:40px;
+}
+
+.section{
+    margin-bottom:30px;
+}
+
+.section h2{
+    border-left:5px solid #4a90e2;
+    padding-left:10px;
+}
+
+.timeline{
+    border-left:2px solid #ddd;
+    padding-left:15px;
+}
+
+/* 校園小圖 */
+.school-img{
+    width:100%;
+    max-height:180px;
+    object-fit:cover;
+    border-radius:10px;
+    margin-top:15px;
+}
+
+/* 作品圖 */
+.gallery{
+    display:flex;
+    gap:10px;
+    margin-top:10px;
+}
+
+.gallery img{
+    width:100px;
+    height:100px;
+    object-fit:cover;
+    border-radius:8px;
+    transition:0.3s;
+}
+
+.gallery img:hover{
+    transform:scale(1.1);
+}
+
+/* 音樂按鈕 */
+.music-btn{
+    position:fixed;
+    top:20px;
+    right:20px;
+    background:#2f3b52;
+    color:white;
+    border:none;
+    padding:10px 14px;
+    border-radius:50px;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🎵 音樂 -->
+<audio id="bgm" autoplay loop>
+    <source src="music/bgm.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+// 自動播放音樂，如果瀏覽器限制則用點擊啟動
+const bgm = document.getElementById('bgm');
+bgm.play().catch(() => {
+    document.addEventListener('click', () => {
+        bgm.play();
+    }, { once: true });
+});
+
+// 音樂開關按鈕
+function toggleMusic(){
+    if(bgm.paused){
+        bgm.play();
+    }else{
+        bgm.pause();
+    }
+}
+
+// 技能條動畫
+function animateSkills(){
+    const bars = document.querySelectorAll('.bar-fill');
+    bars.forEach(bar => {
+        bar.style.width = bar.getAttribute('data-width');
+    });
+}
+window.addEventListener('load', animateSkills);
+</script>
+
+<!-- 🎵 控制按鈕 -->
+<button class="music-btn" onclick="toggleMusic()">🎵</button>
+
+<div class="container">
+
+    <!-- 左側 -->
+    <div class="sidebar">
+        <img src="images/profile.jpg" class="profile-pic">
+
+        <div class="name">張庭瑄</div>
+        <div class="subtitle">室內設計</div>
+
+        <div class="info">
+            <div>📍 台灣</div>
+            <div>學號：114055052</div>
+        </div>
+
+        <h3>技能</h3>
+
+        HTML
+        <div class="bar"><div class="bar-fill" data-width="90%"></div></div>
+
+        CSS
+        <div class="bar"><div class="bar-fill" data-width="80%"></div></div>
+
+        JavaScript
+        <div class="bar"><div class="bar-fill" data-width="75%"></div></div>
     </div>
 
-    <h3>技能</h3>
-    HTML
-    <div class="bar"><div class="bar-fill" data-width="90%"></div></div>
+    <!-- 右側 -->
+    <div class="main">
 
-    CSS
-    <div class="bar"><div class="bar-fill" data-width="80%"></div></div>
+        <div class="section">
+            <h2>個人簡介</h2>
+            <p>
+                就讀亞洲大學室內設計學系，對空間設計與前端開發有高度興趣，
+                擅長將創意轉化為實際作品。
+            </p>
+        </div>
 
-    JavaScript
-    <div class="bar"><div class="bar-fill" data-width="75%"></div></div>
+        <div class="section">
+            <h2>教育背景</h2>
+            <div class="timeline">
+                <div>2025 - 至今｜亞洲大學 室內設計學系</div>
+            </div>
+
+            <img src="images/school.jpg" class="school-img">
+        </div>
+
+    </div>
+
 </div>
+
+</body>
+</html>
