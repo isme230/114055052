@@ -12,6 +12,7 @@ body{
     background:#f4f6f9;
 }
 
+/* 主容器 */
 .container{
     max-width:1000px;
     margin:40px auto;
@@ -43,7 +44,6 @@ body{
 .name{
     text-align:center;
     font-size:24px;
-    margin-bottom:5px;
 }
 
 .subtitle{
@@ -53,17 +53,8 @@ body{
     margin-bottom:20px;
 }
 
-.info{
-    font-size:14px;
-    margin-bottom:20px;
-}
-
 .info div{
     margin-bottom:10px;
-}
-
-.skill-bar{
-    margin-bottom:12px;
 }
 
 .bar{
@@ -91,7 +82,6 @@ body{
 .section h2{
     border-left:5px solid #4a90e2;
     padding-left:10px;
-    margin-bottom:15px;
 }
 
 .timeline{
@@ -99,47 +89,114 @@ body{
     padding-left:15px;
 }
 
-.timeline div{
-    margin-bottom:10px;
+/* 校園小圖 */
+.school-img{
+    width:100%;
+    max-height:180px;
+    object-fit:cover;
+    border-radius:10px;
+    margin-top:15px;
 }
 
-ul{
-    padding-left:20px;
+/* 作品圖 */
+.gallery{
+    display:flex;
+    gap:10px;
+    margin-top:10px;
 }
 
+.gallery img{
+    width:100px;
+    height:100px;
+    object-fit:cover;
+    border-radius:8px;
+    transition:0.3s;
+}
+
+.gallery img:hover{
+    transform:scale(1.1);
+}
+
+/* 音樂按鈕 */
+.music-btn{
+    position:fixed;
+    top:20px;
+    right:20px;
+    background:#2f3b52;
+    color:white;
+    border:none;
+    padding:10px 14px;
+    border-radius:50px;
+    cursor:pointer;
+}
 </style>
 </head>
 
 <body>
+
+<!-- 🎵 音樂（強制播放） -->
+<audio id="bgm" autoplay loop>
+    <source src="music/bgm.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+window.addEventListener('load', () => {
+    const bgm = document.getElementById('bgm');
+    bgm.play().catch(() => {
+        document.addEventListener('click', () => {
+            bgm.play();
+        }, { once: true });
+    });
+});
+
+// 音樂開關
+function toggleMusic(){
+    const bgm = document.getElementById('bgm');
+    if(bgm.paused){
+        bgm.play();
+    }else{
+        bgm.pause();
+    }
+}
+
+// 技能條動畫
+function animateSkills(){
+    const bars=document.querySelectorAll('.bar-fill');
+    bars.forEach(bar=>{
+        bar.style.width=bar.getAttribute('data-width');
+    });
+}
+window.onload=animateSkills;
+</script>
+
+<!-- 🎵 控制按鈕 -->
+<button class="music-btn" onclick="toggleMusic()">🎵</button>
 
 <div class="container">
 
     <!-- 左側 -->
     <div class="sidebar">
         <img src="images/profile.jpg" class="profile-pic">
+
         <div class="name">張庭瑄</div>
         <div class="subtitle">室內設計</div>
+
         <div class="info">
-            <div>📞 09798756</div>
+            <div>📞 0979810756</div>
             <div>✉ wsyuki1234@gmail.com</div>
             <div>📍 台灣</div>
         </div>
 
-        <div class="section">
-            <h3>技能</h3>
-            <div class="skill-bar">
-                HTML
-                <div class="bar"><div class="bar-fill" data-width="90%"></div></div>
-            </div>
-            <div class="skill-bar">
-                CSS
-                <div class="bar"><div class="bar-fill" data-width="80%"></div></div>
-            </div>
-            <div class="skill-bar">
-                JavaScript
-                <div class="bar"><div class="bar-fill" data-width="75%"></div></div>
-            </div>
-        </div>
+        <h3>技能</h3>
+
+        HTML
+        <div class="bar"><div class="bar-fill" data-width="90%"></div></div>
+
+        CSS
+        <div class="bar"><div class="bar-fill" data-width="80%"></div></div>
+
+        JavaScript
+        <div class="bar"><div class="bar-fill" data-width="75%"></div></div>
     </div>
 
     <!-- 右側 -->
@@ -148,7 +205,7 @@ ul{
         <div class="section">
             <h2>個人簡介</h2>
             <p>
-                就讀亞洲大學室內設計學系，對空間設計與前端開發有高度興趣。
+                就讀亞洲大學室內設計學系，對空間設計與前端開發有高度興趣，
                 擅長將創意轉化為實際作品。
             </p>
         </div>
@@ -158,30 +215,22 @@ ul{
             <div class="timeline">
                 <div>2025 - 至今｜亞洲大學 室內設計學系</div>
             </div>
+
+            <img src="images/school.jpg" class="school-img">
         </div>
 
         <div class="section">
-            <h2>專案經驗</h2>
-            <ul>
-                <li>個人網站設計與製作</li>
-                <li>待辦事項系統開發</li>
-                <li>課堂專題開發</li>
-            </ul>
+            <h2>作品展示</h2>
+            <div class="gallery">
+                <img src="images/work1.jpg">
+                <img src="images/work2.jpg">
+                <img src="images/work3.jpg">
+            </div>
         </div>
 
     </div>
 
 </div>
-
-<script>
-function animateSkills(){
-const bars=document.querySelectorAll('.bar-fill');
-bars.forEach(bar=>{
-bar.style.width=bar.getAttribute('data-width');
-});
-}
-window.onload=animateSkills;
-</script>
 
 </body>
 </html>
